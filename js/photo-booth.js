@@ -35,16 +35,39 @@ webcam.addEventListener('canplay', () => {
 takePhotoButton.addEventListener('click', (e) => {
     e.preventDefault();
 
+    photoTimer();
     takePhotos();
 });
 
-takePhotos = () => {
-    ctx.drawImage(webcam, 10, 10, canvas.width - 20, (webcam.height / 2) - 20);
+photoTimer = () => {
+    let seconds = 4;
 
-    let photoCount = 2;
+    setInterval(() => {
+        if(seconds > 0) {
+            timer.innerHTML = seconds - 1;
+        }
+    
+        if(seconds === 1) {
+            timer.innerHTML = 'Say Cheese!';
+        }
+    
+        if(seconds === 0) {
+            timer.innerHTML = '';
+            clearInterval();
+        }
+
+        seconds--;
+    }, 1000);
+}
+
+takePhotos = () => {
+    let photoCount = 1;
 
     setInterval(() => {
         switch(photoCount) {
+            case 1:
+                ctx.drawImage(webcam, 10, 10, canvas.width - 20, (webcam.height / 2) - 20);
+                break;
             case 2:
                 ctx.drawImage(webcam, 10, webcam.height / 2, canvas.width - 20, (webcam.height / 2) - 20);
                 break;
@@ -60,5 +83,20 @@ takePhotos = () => {
         }
 
         photoCount++;
-    }, 3000);
+
+        if(photoCount <= 4) {
+            photoTimer();
+        }
+    }, 5000);
 }
+
+downloadPhotoStripButton.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const a = document.createElement('a');
+    const imgURL = canvas.toDataURL('image/jpg');
+    
+    a.download = 'my-photo-strip.jpg';
+    a.href = imgURL;
+    a.click();
+})
