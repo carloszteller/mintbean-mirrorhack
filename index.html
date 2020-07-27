@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mintbean Mirrorhack - Photo Booth</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/photo-booth.css">
+</head>
+<body>
+    <h1>Mintbean Mirrorhack - Photo Booth</h1>
+
+    <video src="" id="webcam" autoplay loop></video>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="take-photo" alt="Click to start taking pictures" class="fa-stack fa-large">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-camera fa-stack-1x fa-inverse"></i>
+    </div>
+    <div id="clear-photos" alt="Clear all images" class="fa-stack fa-large">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
+    </div>
+    <div id="download-photo-strip" alt="Download photo strip" class="fa-stack fa-large">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-download fa-stack-1x fa-inverse"></i>
+    </div>
+
+    <script src="js/photo-booth.js"></script>
+</body>
+</html>
