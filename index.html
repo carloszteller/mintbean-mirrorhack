@@ -10,27 +10,36 @@
     <link rel="stylesheet" href="css/photo-booth.css">
 </head>
 <body>
-    <h1>Mintbean Mirrorhack - Photo Booth</h1>
+    <div class="container">
+        <div id="header" class="py-5 d-flex flex-column align-items-center">
+            <img src="img/mintbean-logo.png" alt="Mintbean" class="pb-3">
+            <h1>Mirrorhack - Photo Booth</h1>
+        </div>
 
-    <div id="photo-booth-container">
-        <video src="" id="webcam" autoplay loop></video>
+        <div class="d-flex flex-row justify-content-around">
+            <div id="photo-booth-container">
+                <video src="" id="webcam" autoplay loop></video>
 
-        <div id="timer" class="display-4 font-weight-bolder text-white"></div>
-    </div>
+                <div id="timer" class="display-4 font-weight-bolder text-white"></div>
 
-    <canvas id="canvas"></canvas>
+                <div id="photo-booth-buttons" class="py-3 d-flex flex-row justify-content-center">
+                    <div id="take-photo" alt="Click to start taking pictures" class="fa-stack fa-large">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-camera fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div id="clear-photos" alt="Clear all images" class="fa-stack fa-large">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
+                    </div>
+                    <div id="download-photo-strip" alt="Download photo strip" class="fa-stack fa-large">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fas fa-download fa-stack-1x fa-inverse"></i>
+                    </div>
+                </div>
+            </div>
 
-    <div id="take-photo" alt="Click to start taking pictures" class="fa-stack fa-large">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-camera fa-stack-1x fa-inverse"></i>
-    </div>
-    <div id="clear-photos" alt="Clear all images" class="fa-stack fa-large">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
-    </div>
-    <div id="download-photo-strip" alt="Download photo strip" class="fa-stack fa-large">
-        <i class="fas fa-circle fa-stack-2x"></i>
-        <i class="fas fa-download fa-stack-1x fa-inverse"></i>
+            <canvas id="canvas"></canvas>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

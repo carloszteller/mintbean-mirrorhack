@@ -3,6 +3,8 @@
     position: relative;
 }
 
+#header img { width: 200px; }
+
 #timer {
     position: absolute;
     top: 50%; left: 50%;
@@ -11,3 +13,5 @@
 }
 
 #take-photo:hover, #clear-photos:hover, #download-photo-strip:hover { cursor: pointer; }
+
+#clear-photos, #download-photo-strip { display: none; }
